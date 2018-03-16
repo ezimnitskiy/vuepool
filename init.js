@@ -196,6 +196,7 @@ function spawnBlockUnlocker(){
     var worker = cluster.fork({
         workerType: 'blockUnlocker'
     });
+    
     worker.on('exit', function(code, signal){
         log('error', logSystem, 'Block unlocker died, spawning replacement...');
         setTimeout(function(){
